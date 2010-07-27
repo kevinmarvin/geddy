@@ -40,6 +40,8 @@ couchdb.Client.prototype = new function () {
     var headers = {host: this.hostname};
     if (req.data) {
       headers['content-length'] = req.data.length;
+    } else {
+      headers['content-length'] = 0;
     }
     
     //sys.puts(sys.inspect(this));
