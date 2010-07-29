@@ -334,7 +334,7 @@ Controller.prototype = new function () {
       _this.formatContentAndFinish(content);
     });
     
-    templater.render(data, [this.templateRoot], this.params.action);
+    templater.render(data, [this.templateRoot, 'app/views/shared'], this.params.action);
   };
 
 }();

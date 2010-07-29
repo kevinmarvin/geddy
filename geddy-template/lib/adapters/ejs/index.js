@@ -17,6 +17,7 @@
 */
 
 var sys = require('sys'),
+	path = require('path'),
     errors = require('geddy-core/lib/errors'),
     TemplaterBase = require('../../templater_base').TemplaterBase;
     EventEmitter = require('events').EventEmitter,
@@ -62,6 +63,9 @@ var getTemplateUrl = function (templateRoot, partialUrl, parentNode) {
 
   // Or fall back to the fallback of the root of the views directory
   dirs.push('app/views');
+  
+  // Add the app/views/shared directory
+  dirs.push('app/views/shared');
   
   // Look through the directory list until you find a registered
   // template path -- these are registered during app init so we're
